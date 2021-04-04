@@ -1,0 +1,8 @@
+project = "id_project"
+
+#EXAMPLE OF A PASSWORD, CHANGE !!!!!!!!
+gke_password = "root"
+
+location  =  "us-central1"
+
+node_locations =  ["us-central1-a"]
