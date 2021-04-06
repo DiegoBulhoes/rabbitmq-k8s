@@ -93,4 +93,12 @@ variable "rabbitmq_auth_username" {
   description = "rabbitmq_auth_username"
   default     = "admin"
 }
+variable "grafana_admin_user" {
+  default     = "admin"
+  description = "admin"
+}
+variable "grafana_admin_password" {
+  default     = "admin"
+  description = "admin"
+}
 

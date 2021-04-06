@@ -48,3 +48,12 @@ variable "rabbitmq_plugins" {
   default     = "rabbitmq_management rabbitmq_peer_discovery_k8s rabbitmq_prometheus"
   description = "rabbitmq_plugins"
 }
+variable "grafana_admin_user" {
+  default     = "admin"
+  description = "admin"
+}
+variable "grafana_admin_password" {
+  default     = "admin"
+  description = "admin"
+}
+

@@ -84,4 +84,12 @@ resource "helm_release" "grafana" {
   repository = "https://grafana.github.io/helm-charts"
   chart      = "grafana"
   namespace  = kubernetes_namespace.grafana.metadata.0.name
+  set {
+    name  = "adminUser"
+    value = var.grafana_admin_user
+  }
+  set {
+    name  = "adminPassword"
+    value = var.grafana_admin_password
+  }
 }

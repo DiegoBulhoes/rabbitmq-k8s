@@ -73,22 +73,14 @@ terraform apply -var="install_apps=true"
 
 - `RabbitMQ`
 
-Recuperar a credencial gerada automaticamente.
-
 ```shell
-echo "user: user\npassword:" $(kubectl get secret -n rabbitmq rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode) 
-```
-
-Realizar o port-forward:
-
-```shell
-kubectl port-forward -n rabbitmq svc/rabbitmq 15672:15672 
+kubectl port-forward -n rabbitmq svc/rabbitmq 15672 
 ```
 
 - `Prometheus`
 
 ```shell
-kubectl -n monitoring port-forward svc/kube-prometheus-prometheus 9090 
+kubectl -n prometheus port-forward svc/kube-prometheus-prometheus 9090 
 ```
 
 - `Grafana`
