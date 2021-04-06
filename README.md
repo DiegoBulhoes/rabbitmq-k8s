@@ -1,6 +1,6 @@
 # RabbitMQ no Kubernets
 
-Esse laboratório tem como objetivo de fornecer uma ambiente para praticar a ferramenta Kubernetes usando o [GKE](https://cloud.google.com/kubernetes-engine?hl=pt-br), [Prometheus Operator](https://prometheus.io/), [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) e [Grafana](https://grafana.com/). 
+Esse laboratório tem como objetivo de fornecer uma ambiente para praticar a ferramenta Kubernetes usando o [GKE](https://cloud.google.com/kubernetes-engine?hl=pt-br), [Prometheus Operator](https://prometheus.io/), [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) e [Grafana](https://grafana.com/).
 
 Para inicializar o laboratório é necessário criar uma conta de serviço com os seguintes papeis
 
@@ -16,7 +16,7 @@ O Terraform irá instanciar cluster básico com 2 nodes cada um em uma região d
 export GOOGLE_APPLICATION_CREDENTIALS=/path/keyfile.json 
 ```
 
-## Inicializar o laboratório 
+## Inicializar o laboratório
 
 Clonar o projeto
 
@@ -76,7 +76,7 @@ terraform apply -var="install_apps=true"
 Recuperar a credencial gerada automaticamente.
 
 ```shell
-echo "user: users\npassword:" $(kubectl get secret -n rabbitmq rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode) 
+echo "user: user\npassword:" $(kubectl get secret -n rabbitmq rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode) 
 ```
 
 Realizar o port-forward:

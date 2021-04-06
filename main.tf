@@ -92,8 +92,11 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 }
 
 module "helm" {
-  count  = var.install_apps ? 1 : 0
-  source = "./modules/helm"
+  source                     = "./modules/helm"
+  count                      = var.install_apps ? 1 : 0
+  rabbitmq_auth_password     = var.rabbitmq_auth_password
+  rabbitmq_auth_erlangCookie = var.rabbitmq_auth_erlangCookie
+  rabbitmq_auth_username     = var.rabbitmq_auth_erlangCookie
   providers = {
     kubernetes = kubernetes.k8s
   }
