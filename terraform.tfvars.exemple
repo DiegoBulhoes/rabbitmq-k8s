@@ -1,8 +1,18 @@
 project = "id_project"
 
 #EXAMPLE OF A PASSWORD, CHANGE !!!!!!!!
-gke_password = "root"
+gke_password = "password"
 
-location  =  "us-central1"
+rabbitmq_auth_password     = "password"
+rabbitmq_auth_erlangCookie = "password"
 
-node_locations =  ["us-central1-a"]
+grafana_admin_user     = "admin"
+grafana_admin_password = "password"
+
+location = "us-central1"
+
+node_locations = ["us-central1-a"]
+
+install_apps = false
+
+max_node_count = 5
