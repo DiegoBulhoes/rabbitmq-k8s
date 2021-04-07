@@ -16,13 +16,8 @@ O Terraform irá instanciar cluster básico com 2 nodes cada um em uma região d
 export GOOGLE_APPLICATION_CREDENTIALS=/path/keyfile.json 
 ```
 
-## Inicializar o laboratório
+## Execultar o laboratório
 
-Clonar o projeto
-
-```shell
-git clone https://github.com/DiegoBulhoes/rabbitmq-k8s 
-```
 
 Renomeie o arquivo [terraform.tfvars.exemple](terraform.tfvars.exemple) para terraform.tfvars (nesse arquivo irá conter todas as variáveis para criar as instâncias no GCP).
 
@@ -89,7 +84,7 @@ Recuperar a credencial gerada automaticamente.
 
 ```shell
 echo "user:" $(kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-user}" | base64 --decode) "\npassword:"$(kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode) 
-``
+```
 
 ```shell
 kubectl -n grafana port-forward svc/grafana 3000:80  
