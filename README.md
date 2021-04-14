@@ -1,4 +1,4 @@
-# RabbitMQ no Kubernets
+# RabbitMQ no Kubernetes
 
 Esse laboratório tem como objetivo de fornecer uma ambiente para praticar a ferramenta Kubernetes usando o [GKE](https://cloud.google.com/kubernetes-engine?hl=pt-br), [Prometheus Operator](https://prometheus.io/), [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) e [Grafana](https://grafana.com/).
 
@@ -33,7 +33,7 @@ Para verificar se os arquivos possuem algum erro de sintaxe ou de configuração
 terraform plan 
 ```
 
-Após a verificação do _plan_ execulte o seuinte comando para realizar o processo de instanciação
+Após a verificação do _plan_ execulte o seguinte comando para realizar o processo de instanciação
 
 ```shell
 terraform apply -var="install_apps=false" 
@@ -52,7 +52,7 @@ kubernetes_cluster_name = project-gke
 region = us-central1 
 ```
 
-Agora será necessário configurar o kubectl com o proposito de instalar as aplicações.
+Agora será necessário configurar o kubectl com o propósito de instalar as aplicações.
 
 ```shell
 gcloud container clusters get-credentials <nome_do_cluster> --region us-central1 --project <id_do_projeto> 
